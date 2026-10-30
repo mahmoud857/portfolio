@@ -1,843 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Mahmoud Hassan | Data Analyst</title>
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #0b1120;
-            color: #f8fafc;
-            line-height: 1.6;
-        }
-
-
-        /* ================= NAVIGATION ================= */
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 20px 8%;
-            background: rgba(11, 17, 32, 0.95);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            border-bottom: 1px solid #1e293b;
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: #38bdf8;
-        }
-
-        nav a {
-            color: #cbd5e1;
-            text-decoration: none;
-            margin-left: 25px;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #38bdf8;
-        }
-
-
-        /* ================= GENERAL ================= */
-
-        section {
-            padding: 100px 8%;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 38px;
-            margin-bottom: 50px;
-        }
-
-        .section-title span {
-            color: #38bdf8;
-        }
-
-
-        /* ================= HERO ================= */
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, #0b1120, #111c35);
-        }
-
-        .hero-container {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 60px;
-        }
-
-        .hero-content {
-            max-width: 650px;
-        }
-
-        .hero span {
-            color: #38bdf8;
-            font-weight: bold;
-        }
-
-        .hero h1 {
-            font-size: 60px;
-            margin: 15px 0;
-        }
-
-        .hero h2 {
-            font-size: 30px;
-            color: #94a3b8;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            color: #cbd5e1;
-            max-width: 650px;
-        }
-
-
-        /* PROFILE IMAGE */
-
-        .profile-container {
-            flex-shrink: 0;
-        }
-
-        .profile-image {
-            width: 300px;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 5px solid #38bdf8;
-            box-shadow: 0 0 35px rgba(56, 189, 248, 0.25);
-        }
-
-
-        /* ================= BUTTONS ================= */
-
-        .buttons {
-            margin-top: 30px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 22px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .primary {
-            background: #38bdf8;
-            color: #07111f;
-        }
-
-        .secondary {
-            border: 1px solid #38bdf8;
-            color: #38bdf8;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-        }
-
-
-        /* ================= ABOUT ================= */
-
-        .about {
-            background: #0f172a;
-        }
-
-        .about-content {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
-            color: #cbd5e1;
-            font-size: 18px;
-        }
-
-
-        /* ================= SKILLS ================= */
-
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .skill {
-            background: #111c35;
-            border: 1px solid #1e293b;
-            padding: 25px;
-            text-align: center;
-            border-radius: 12px;
-            transition: 0.3s;
-        }
-
-        .skill:hover {
-            transform: translateY(-5px);
-            border-color: #38bdf8;
-        }
-
-
-        /* ================= PROJECTS ================= */
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .project {
-            background: #111c35;
-            border: 1px solid #1e293b;
-            border-radius: 14px;
-            overflow: hidden;
-            transition: 0.3s;
-        }
-
-        .project:hover {
-            transform: translateY(-7px);
-            border-color: #38bdf8;
-        }
-
-        .project-image {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
-            border-bottom: 1px solid #1e293b;
-        }
-
-        .project-content {
-            padding: 25px;
-        }
-
-        .project h3 {
-            color: #38bdf8;
-            margin-bottom: 15px;
-            font-size: 23px;
-        }
-
-        .project p {
-            color: #cbd5e1;
-            margin-bottom: 20px;
-        }
-
-        .tag {
-            display: inline-block;
-            padding: 5px 10px;
-            margin: 3px;
-            background: #1e293b;
-            color: #7dd3fc;
-            border-radius: 5px;
-            font-size: 13px;
-        }
-
-
-        /* ================= CONTACT ================= */
-
-        .contact {
-            background: #0f172a;
-            text-align: center;
-        }
-
-        .contact-description {
-            color: #cbd5e1;
-            margin-bottom: 40px;
-        }
-
-        .contact-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .contact-card {
-            background: #111c35;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            padding: 25px 15px;
-            text-decoration: none;
-            color: #f8fafc;
-            transition: 0.3s;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-            border-color: #38bdf8;
-        }
-
-        .contact-icon {
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
-
-        .contact-card h3 {
-            color: #38bdf8;
-            margin-bottom: 5px;
-        }
-
-        .contact-card p {
-            color: #94a3b8;
-            font-size: 14px;
-            word-break: break-word;
-        }
-
-
-        /* ================= FOOTER ================= */
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            background: #080d18;
-            color: #64748b;
-        }
-
-
-        /* ================= MOBILE ================= */
-
-        @media (max-width: 768px) {
-
-            nav {
-                padding: 15px 5%;
-            }
-
-            nav div:last-child {
-                display: none;
-            }
-
-            section {
-                padding: 80px 5%;
-            }
-
-            .hero {
-                text-align: center;
-            }
-
-            .hero-container {
-                flex-direction: column-reverse;
-                justify-content: center;
-                gap: 30px;
-            }
-
-            .hero h1 {
-                font-size: 42px;
-            }
-
-            .hero h2 {
-                font-size: 23px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .profile-image {
-                width: 220px;
-                height: 220px;
-            }
-
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahmoud Hassan | Data Analyst</title>
+<meta name="description" content="Mahmoud Hassan is a junior data analyst who builds Excel, Power Query and Power BI dashboards from real business data.">
+<meta property="og:title" content="Mahmoud Hassan | Data Analyst">
+<meta property="og:description" content="Dashboards, reports and automation built from real business data.">
+<meta property="og:image" content="image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a1020; --bg2:#0f1830; --card:#121d38; --line:#22304f;
+  --text:#eef2f9; --muted:#9fb0cc; --accent:#38bdf8; --accent2:#f5b544;
+  --head:'Sora','Segoe UI',Arial,sans-serif; --body:'Source Sans 3','Segoe UI',Arial,sans-serif;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#f6f8fc; --bg2:#eaeff8; --card:#ffffff; --line:#d5deee;
+    --text:#0f1a33; --muted:#51617f; --accent:#0b78b8; --accent2:#a86a00;
+  }
+}
+:root[data-theme="light"]{
+  --bg:#f6f8fc; --bg2:#eaeff8; --card:#ffffff; --line:#d5deee;
+  --text:#0f1a33; --muted:#51617f; --accent:#0b78b8; --accent2:#a86a00;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--body);font-size:17px;background:var(--bg);color:var(--text);line-height:1.65}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 6%}
+h1,h2,h3{font-family:var(--head);line-height:1.15}
+section{padding:96px 0}
+.alt{background:var(--bg2)}
+.sec-head{margin-bottom:44px;max-width:620px}
+.sec-head h2{font-size:clamp(28px,4vw,40px);margin-bottom:10px}
+.sec-head p{color:var(--muted)}
+
+/* nav */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--head);font-weight:800;text-decoration:none;font-size:19px}
+.logo b{color:var(--accent)}
+.links{display:flex;gap:28px;align-items:center}
+.links a{text-decoration:none;color:var(--muted);font-weight:600;font-size:16px}
+.links a:hover{color:var(--accent)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:8px 12px;font:600 15px var(--body);cursor:pointer}
+
+/* hero */
+.hero{padding:150px 0 90px;background:radial-gradient(900px 420px at 85% 0%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 70%),var(--bg)}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;font-size:15px;color:var(--muted);margin-bottom:22px}
+.dot{width:9px;height:9px;border-radius:50%;background:#34d399}
+.hero h1{font-size:clamp(40px,6vw,66px);font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+.hero h2{font-size:clamp(20px,2.6vw,27px);font-weight:500;color:var(--accent);margin-bottom:20px}
+.hero p.lead{color:var(--muted);font-size:19px;max-width:560px}
+.btns{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:600;padding:13px 24px;border-radius:10px;border:1px solid var(--accent);transition:transform .2s,background .2s}
+.btn.primary{background:var(--accent);color:#06101f}
+.btn.ghost{color:var(--accent)}
+.btn:hover{transform:translateY(-2px)}
+.photo{position:relative;justify-self:center}
+.photo img{width:min(320px,70vw);aspect-ratio:1;object-fit:cover;border-radius:24px;border:1px solid var(--line);display:block;background:var(--card)}
+.photo::after{content:"";position:absolute;inset:14px -14px -14px 14px;border:2px solid var(--accent);border-radius:24px;z-index:-1;opacity:.55}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:72px;border:1px solid var(--line);border-radius:16px;background:var(--card);overflow:hidden}
+.stat{padding:24px 20px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat strong{display:block;font:800 34px var(--head);color:var(--accent)}
+.stat span{color:var(--muted);font-size:15px}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px}
+.about-grid p{color:var(--muted);margin-bottom:16px}
+.focus{list-style:none;display:grid;gap:14px}
+.focus li{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent2);border-radius:10px;padding:16px 18px}
+.focus b{display:block;font-family:var(--head);font-size:16px;margin-bottom:2px}
+.focus span{color:var(--muted);font-size:15.5px}
+
+/* skills */
+.skill-groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.group{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+.group h3{font-size:18px;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:5px 12px;font-size:15px}
+
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:26px}
+.project{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:border-color .2s,transform .2s}
+.project:hover{border-color:var(--accent);transform:translateY(-4px)}
+.media{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,var(--bg2),var(--card));display:grid;place-items:center;border-bottom:1px solid var(--line);overflow:hidden}
+.media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.media span{font:700 15px var(--head);color:var(--muted);padding:0 20px;text-align:center}
+.badge{position:absolute;top:12px;left:12px;z-index:2;background:var(--accent2);color:#1a1100;font:700 13px var(--head);padding:4px 10px;border-radius:6px}
+.body{padding:24px;display:flex;flex-direction:column;flex:1}
+.project h3{font-size:20px;margin-bottom:10px}
+.project p{color:var(--muted);font-size:16px;margin-bottom:14px}
+.project ul{margin:0 0 16px 18px;color:var(--muted);font-size:15.5px}
+.project .chips{margin-top:auto}
+.project .chip{font-size:13.5px;padding:3px 10px;color:var(--accent)}
+.project .link{margin-top:16px;color:var(--accent);font-weight:600;text-decoration:none}
+.project .link:hover{text-decoration:underline}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.c-card{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;transition:border-color .2s,transform .2s}
+.c-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.c-card h3{font-size:17px;color:var(--accent);margin-bottom:4px}
+.c-card p{color:var(--muted);font-size:15px;word-break:break-word}
+footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:15px;text-align:center}
+
+@media (max-width:860px){
+  .hero-grid,.about-grid{grid-template-columns:1fr}
+  .photo{order:-1}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .menu-btn{display:block}
+  .links{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 6% 16px}
+  .links.open{display:flex}
+  .links a{padding:12px 0;width:100%}
+  section{padding:72px 0}
+  .hero{padding-top:120px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
 </head>
-
-
 <body>
 
-
-    <!-- ================= NAVIGATION ================= -->
-
-    <nav>
-
-        <div class="logo">
-            Mahmoud Hassan
-        </div>
-
-        <div>
-
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-
-        </div>
-
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#home">Mahmoud<b>.</b>Hassan</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="links">Menu</button>
+    <nav class="links" id="links" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
     </nav>
+  </div>
+</header>
 
-
-
-    <!-- ================= HERO ================= -->
-
-    <section class="hero" id="home">
-
-        <div class="hero-container">
-
-
-            <!-- PERSONAL INFORMATION -->
-
-            <div class="hero-content">
-
-                <span>HELLO, I'M</span>
-
-                <h1>Mahmoud Hassan</h1>
-
-                <h2>Junior Data Analyst</h2>
-
-                <p>
-                    Turning raw data into actionable insights and interactive dashboards for better business decisions.
-                </p>
-
-
-                <div class="buttons">
-
-                    <a href="#projects" class="btn primary">
-                        View My Projects
-                    </a>
-
-                    <a href="#contact" class="btn secondary">
-                        Contact Me
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- PERSONAL IMAGE -->
-
-            <div class="profile-container">
-
-                <!-- Change profile.jpg to your actual image name -->
-
-                <img
-                    src="image.jpg"
-                    alt="Mahmoud Hassan"
-                    class="profile-image"
-                >
-
-            </div>
-
-
+<main>
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="status"><span class="dot"></span>Open to data analyst roles</div>
+        <h1>Mahmoud Hassan</h1>
+        <h2>Junior Data Analyst</h2>
+        <p class="lead">I turn messy business data into clear dashboards and reports that managers can act on: attendance, HR, insurance, sales and operations.</p>
+        <div class="btns">
+          <a class="btn primary" href="#projects">View my projects</a>
+          <a class="btn ghost" href="Data%20Analyst%20%26%20Data%20Entry%20Specialist.pdf" target="_blank" rel="noopener">Download CV</a>
         </div>
-
-    </section>
-
-
-
-    <!-- ================= ABOUT ================= -->
-
-    <section class="about" id="about">
-
-        <h2 class="section-title">
-
-            About <span>Me</span>
-
-        </h2>
-
-
-        <div class="about-content">
-
-            <p>
-
-                I am a Junior Data Analyst with a background in Artificial
-                Intelligence. I am passionate about analyzing data,
-                discovering meaningful insights, and building clear
-                dashboards that help businesses make better decisions.
-
-            </p>
-
-            <br>
-
-            <p>
-
-                My experience includes working with real-world business
-                data, data cleaning, reporting, dashboard development,
-                and process automation.
-
-            </p>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= SKILLS ================= -->
-
-    <section id="skills">
-
-        <h2 class="section-title">
-
-            My <span>Skills</span>
-
-        </h2>
-
-
-        <div class="skills">
-
-            <div class="skill">Microsoft Excel</div>
-
-            <div class="skill">Power BI</div>
-
-            <div class="skill">SQL</div>
-
-            <div class="skill">Python</div>
-
-            <div class="skill">Power Query</div>
-
-            <div class="skill">Data Cleaning</div>
-
-            <div class="skill">Data Analysis</div>
-
-            <div class="skill">Data Visualization</div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= PROJECTS ================= -->
-
-    <section id="projects">
-
-        <h2 class="section-title">
-
-            Featured <span>Projects</span>
-
-        </h2>
-
-
-        <div class="projects">
-
-
-            <!-- PROJECT 1 -->
-
-            <div class="project">
-
-                <!-- DASHBOARD IMAGE -->
-
-                <img
-                    src="images/attendance-dashboard.jpg"
-                    alt="Fingerprint Attendance Dashboard"
-                    class="project-image"
-                >
-
-
-                <div class="project-content">
-
-                    <h3>
-                        Fingerprint Attendance Analysis
-                    </h3>
-
-
-                    <p>
-
-                        Real-world attendance analysis project covering
-                        multiple factories. The analysis identifies
-                        attendance problems by factory, shift, position,
-                        month, and problem status.
-
-                    </p>
-
-
-                    <span class="tag">Excel</span>
-
-                    <span class="tag">Power Query</span>
-
-                    <span class="tag">Data Analysis</span>
-
-                    <span class="tag">Dashboard</span>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- PROJECT 2 -->
-
-            <div class="project">
-
-                <!-- DASHBOARD IMAGE -->
-
-                <img
-                    src="images/hr-dashboard.jpg"
-                    alt="HR Document Dashboard"
-                    class="project-image"
-                >
-
-
-                <div class="project-content">
-
-                    <h3>
-                        HR Document Tracking System
-                    </h3>
-
-
-                    <p>
-
-                        An Excel-based HR system used to track employee
-                        documents, identify missing documents, and analyze
-                        document completion across different factories.
-
-                    </p>
-
-
-                    <span class="tag">Excel</span>
-
-                    <span class="tag">XLOOKUP</span>
-
-                    <span class="tag">Data Validation</span>
-
-                    <span class="tag">HR Analytics</span>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- PROJECT 3 -->
-
-            <div class="project">
-
-                <!-- DASHBOARD IMAGE -->
-
-                <img
-                    src="Sales Dashboard.png"
-                    alt="Sales Dashboard"
-                    class="project-image"
-                >
-
-
-                <div class="project-content">
-
-                    <h3>
-                        Sales Analysis Dashboard
-                    </h3>
-
-
-                    <p>
-
-                        Interactive sales dashboard designed to analyze
-                        sales performance, profitability, trends, and
-                        important business KPIs.
-
-                    </p>
-
-
-                    <span class="tag">Excel</span>
-
-                    <span class="tag">Power Query</span>
-
-                    <span class="tag">Data Visualization</span>
-
-                    <br><br>
-
-                    <a href="projects/Sales.html" class="btn primary" target="_blank">
-                    View Project
-                    </a>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= CONTACT ================= -->
-
-    <section class="contact" id="contact">
-
-
-        <h2 class="section-title">
-
-            Let's <span>Connect</span>
-
-        </h2>
-
-
-        <p class="contact-description">
-
-            I'm always open to discussing data analysis opportunities,
-            projects, and collaborations.
-
-        </p>
-
-
-        <div class="contact-links">
-
-
-            <!-- PHONE -->
-
-            <a
-                href="tel:+201551644616"
-                class="contact-card"
-            >
-
-                <div class="contact-icon">
-                    📞
-                </div>
-
-                <h3>
-                    Phone
-                </h3>
-
-                <p>
-                    +201551644616
-                </p>
-
-            </a>
-
-
-
-            <!-- EMAIL -->
-
-            <a
-                href="mailto:mahmoudhmahmoud999@gmail.com"
-                class="contact-card"
-            >
-
-                <div class="contact-icon">
-                    📧
-                </div>
-
-                <h3>
-                    Email
-                </h3>
-
-                <p>
-                    mahmoudhmahmoud999@gmail.com
-                </p>
-
-            </a>
-
-
-
-            <!-- LINKEDIN -->
-
-            <a
-                href="https://www.linkedin.com/in/mahmoudhassanmahmoud/"
-                target="_blank"
-                class="contact-card"
-            >
-
-                <div class="contact-icon">
-                    💼
-                </div>
-
-                <h3>
-                    LinkedIn
-                </h3>
-
-                <p>
-                    Connect with me
-                </p>
-
-            </a>
-
-
-
-            <!-- GITHUB -->
-
-            <a
-                href="https://github.com/mahmoud857"
-                target="_blank"
-                class="contact-card"
-            >
-
-                <div class="contact-icon">
-                    💻
-                </div>
-
-                <h3>
-                    GitHub
-                </h3>
-
-                <p>
-                    View my projects
-                </p>
-
-            </a>
-
-
-
-            <!-- CV -->
-
-            <a
-                href="Data Analyst & Data Entry Specialist.pdf"
-                target="_blank"
-                class="contact-card"
-            >
-
-                <div class="contact-icon">
-                    📄
-                </div>
-
-                <h3>
-                    Download CV
-                </h3>
-
-                <p>
-                    View my resume
-                </p>
-
-            </a>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        © 2026 Mahmoud Hassan. All Rights Reserved.
-
-    </footer>
-
-
+      </div>
+      <div class="photo"><img src="image.jpg" alt="Portrait of Mahmoud Hassan"></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>7</strong><span>Projects built</span></div>
+      <div class="stat"><strong>5</strong><span>Real company datasets</span></div>
+      <div class="stat"><strong>3</strong><span>Factories analyzed</span></div>
+      <div class="stat"><strong>AI</strong><span>Academic background</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="sec-head"><h2>About me</h2></div>
+      <p>I’m a junior data analyst with a background in artificial intelligence. I enjoy finding the story inside raw data and presenting it in dashboards people actually use.</p>
+      <p>My work comes from real company data: cleaning it, modeling it, building KPIs and automating the reports that used to be done by hand. I also care about the design of what I deliver, including Arabic right-to-left interfaces.</p>
+    </div>
+    <ul class="focus">
+      <li><b>Data cleaning and modeling</b><span>Power Query, Excel formulas, structured tables</span></li>
+      <li><b>Dashboards and KPIs</b><span>Excel and Power BI, built for decision makers</span></li>
+      <li><b>Process automation</b><span>Replacing manual HR and payroll calculations</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head"><h2>Skills and tools</h2><p>What I use to take data from raw export to final report.</p></div>
+    <div class="skill-groups">
+      <div class="group"><h3>Analysis</h3><div class="chips"><span class="chip">Data analysis</span><span class="chip">Data cleaning</span><span class="chip">KPI design</span><span class="chip">HR analytics</span></div></div>
+      <div class="group"><h3>Tools</h3><div class="chips"><span class="chip">Microsoft Excel</span><span class="chip">Power Query</span><span class="chip">Power BI</span><span class="chip">SQL</span><span class="chip">Python</span></div></div>
+      <div class="group"><h3>Reporting</h3><div class="chips"><span class="chip">Data visualization</span><span class="chip">Interactive dashboards</span><span class="chip">Data validation</span><span class="chip">XLOOKUP</span></div></div>
+      <div class="group"><h3>Design</h3><div class="chips"><span class="chip">Dashboard UI</span><span class="chip">Arabic RTL layouts</span><span class="chip">Color and typography</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="projects">
+  <div class="wrap">
+    <div class="sec-head"><h2>Featured projects</h2><p>Real work for real teams. Each dashboard started from raw files and ended as a tool people use daily.</p></div>
+    <div class="projects" id="projectList"></div>
+    <noscript><p>Enable JavaScript to see the project list.</p></noscript>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head"><h2>Let’s connect</h2><p>Open to data analysis roles, freelance dashboards and collaborations.</p></div>
+    <div class="contact-grid">
+      <a class="c-card" href="mailto:mahmoudhmahmoud999@gmail.com"><h3>Email</h3><p>mahmoudhmahmoud999@gmail.com</p></a>
+      <a class="c-card" href="tel:+201551644616"><h3>Phone</h3><p>+201551644616</p></a>
+      <a class="c-card" href="https://www.linkedin.com/in/mahmoudhassanmahmoud/" target="_blank" rel="noopener"><h3>LinkedIn</h3><p>Connect with me</p></a>
+      <a class="c-card" href="https://github.com/mahmoud857" target="_blank" rel="noopener"><h3>GitHub</h3><p>Browse my code</p></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 Mahmoud Hassan. All rights reserved.</footer>
+
+<script>
+// Add or edit projects here. Put screenshots in the images/ folder.
+var projects = [
+  {t:"Fingerprint Attendance Dashboard", img:"images/attendance-dashboard.jpg",
+   d:"Attendance analysis across multiple factories, built from fingerprint machine exports.",
+   pts:["Problems by factory, shift, position and month","Status tracking for every attendance issue"],
+   tags:["Excel","Power Query","Dashboard"]},
+  {t:"Employee Insurance Coverage Dashboard", img:"images/insurance-dashboard.jpg",
+   d:"Excel dashboard showing who is covered by insurance and who is not.",
+   pts:["KPI cards for coverage status","Charts by location, job, gender and status"],
+   tags:["Excel","KPIs","Charts"]},
+  {t:"ERP Dashboard Redesign", img:"images/erp-dashboard.jpg",
+   d:"New home screen for a company ERP: Arabic right-to-left layout with cards for each section and a sidebar.",
+   pts:["Refreshed color palette and typography","Clearer navigation between departments"],
+   tags:["UI Design","HTML/CSS","Arabic RTL"]},
+  {t:"Overtime Calculation Sheet", img:"images/overtime-sheet.jpg",
+   d:"Automatic overtime calculation for 12-hour and 10-hour shifts, based on exit time.",
+   pts:["Separate day and night overtime columns","Removes manual payroll calculations"],
+   tags:["Excel","Formulas","Automation"]},
+  {t:"Attendance Mobile App", badge:"Concept", img:"images/attendance-app.jpg",
+   d:"App idea where employees log attendance by fingerprint from their phone.",
+   pts:["Instant notifications to the manager","Excel export of attendance records"],
+   tags:["Product Design","Mobile","HR Tech"]},
+  {t:"HR Document Tracking System", img:"images/hr-dashboard.jpg",
+   d:"Tracks employee documents, flags what is missing and shows completion rates by factory.",
+   tags:["Excel","XLOOKUP","Data Validation"]},
+  {t:"Sales Analysis Dashboard", img:"Sales%20Dashboard.png", link:"projects/Sales.html",
+   d:"Interactive dashboard for sales performance, profitability, trends and key business KPIs.",
+   tags:["Excel","Power Query","Visualization"]}
+];
+
+var list = document.getElementById('projectList');
+projects.forEach(function(p){
+  var el = document.createElement('article');
+  el.className = 'project';
+  var pts = p.pts ? '<ul>' + p.pts.map(function(x){return '<li>'+x+'</li>'}).join('') + '</ul>' : '';
+  var tags = p.tags.map(function(x){return '<span class="chip">'+x+'</span>'}).join('');
+  var link = p.link ? '<a class="link" href="'+p.link+'" target="_blank" rel="noopener">View project</a>' : '';
+  var badge = p.badge ? '<span class="badge">'+p.badge+'</span>' : '';
+  el.innerHTML =
+    '<div class="media">'+badge+'<span>'+p.t+'</span>'+
+    '<img src="'+p.img+'" alt="'+p.t+' screenshot" loading="lazy" onerror="this.remove()"></div>'+
+    '<div class="body"><h3>'+p.t+'</h3><p>'+p.d+'</p>'+pts+'<div class="chips">'+tags+'</div>'+link+'</div>';
+  list.appendChild(el);
+});
+
+var btn = document.getElementById('menuBtn'), links = document.getElementById('links');
+btn.addEventListener('click', function(){
+  var open = links.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+});
+links.addEventListener('click', function(){ links.classList.remove('open'); btn.setAttribute('aria-expanded', false); });
+</script>
 </body>
-
 </html>
